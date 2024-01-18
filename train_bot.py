@@ -12,7 +12,7 @@ words=[]
 classes = []
 word_tags_list = []
 ignore_words = ['?', '!',',','.', "'s", "'m"]
-train_data_file = open('intents.json').read()
+train_data_file = open('/content/C137Boot/intents.json').read()
 intents = json.loads(train_data_file)
 
 # Función para añadir palabras raíz (stem words)
@@ -46,8 +46,8 @@ def create_bot_corpus(stem_words, classes):
     stem_words = sorted(list(set(stem_words)))
     classes = sorted(list(set(classes)))
 
-    pickle.dump(stem_words, open('words.pkl','wb'))
-    pickle.dump(classes, open('classes.pkl','wb'))
+    pickle.dump(stem_words, open('/content/C137Boot/words.pkl','wb'))
+    pickle.dump(classes, open('/content/C137Boot/classes.pkl','wb'))
 
     return stem_words, classes
 
